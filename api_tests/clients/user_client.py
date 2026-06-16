@@ -15,11 +15,11 @@ class UserClient:
         return response
 
     def create_user(self, name, job):
-        response = requests.post(self.base_url, headers=self.headers, json={'name': name, 'job': job})
+        response = requests.post(f"{self.base_url}/users", headers=self.headers, json={"name": name, "job": job})
         return response
 
     def update_user(self, user_id, name, job):
-        response = requests.put(f"{self.base_url}/users/{user_id}", headers=self.headers, json={'name': name, 'job': job})
+        response = requests.put(f"{self.base_url}/users/{user_id}", headers=self.headers, json={"name": name, "job": job})
         return response
 
     def delete_user(self, user_id):
