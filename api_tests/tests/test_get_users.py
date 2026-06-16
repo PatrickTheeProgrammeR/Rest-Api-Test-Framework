@@ -1,5 +1,5 @@
 import allure
-
+from models.user_model import UserResponse
 
 @allure.feature("Users")
 @allure.story("Get all users")
@@ -15,5 +15,5 @@ def test_get_single_user(client):
     r = response.json()
     assert response.status_code == 200
     assert r["data"]["email"] == "janet.weaver@reqres.in"
-    # print(r)
+    UserResponse(data=r["data"])
 
