@@ -26,12 +26,12 @@ jobs:
         pip install pytest -r requirements.txt
 
     - name: Run tests
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+        API_TOKEN: ${{ secrets.API_TOKEN }}
       run: |
         cd api_tests
         pytest --html=report.html --self-contained-html
-        env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-          API_TOKEN: ${{ secrets.API_TOKEN }}
 
     - name: Upload test report
       uses: actions/upload-artifact@v4
