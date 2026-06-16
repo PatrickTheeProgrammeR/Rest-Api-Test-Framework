@@ -37,6 +37,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: report
-        path: report.html
+        path: api_tests/report.html
 
 
