@@ -7,5 +7,5 @@ from clients.user_client import UserClient
 def client():
     load_dotenv()
     base_url = os.getenv("BASE_URL")
-    token = os.getenv("API_KEY")
+    token = os.getenv("API_TOKEN")
     return UserClient(base_url, token)
