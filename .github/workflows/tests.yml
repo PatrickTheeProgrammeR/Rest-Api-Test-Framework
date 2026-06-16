@@ -27,6 +27,7 @@ jobs:
 
     - name: Run tests
       run: |
+        cd api_tests
         pytest --html=report.html --self-contained-html
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
@@ -37,7 +38,5 @@ jobs:
       with:
         name: report
         path: report.html
-
-
 
 
